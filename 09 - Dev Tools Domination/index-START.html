@@ -28,23 +28,47 @@
     console.log("%c I can style console logs mayne", 'font-size: 20px; color: red');
 
     // warning!
-    console.warn("dear god");
+    console.warn('dear god');
 
     // Error :|
+    console.error('ARGH')
 
     // Info
+    console.info('Well sire thats frankly dumb')
 
     // Testing
+    console.assert( 1 != 1, 'Nuh uh')
 
     // clearing
+    //console.clear();
 
     // Viewing DOM Elements
+    const p = document.querySelector("p");
+    console.dir(p);
 
     // Grouping together
+     dogs.forEach( dog => {
+       console.groupCollapsed(`${dog.name}`)
+        console.log(`This is ${dog.name}`)
+        console.log(`He is ${dog.age * 7} dog years old`)
+        console.groupEnd(`${dog.name}`)
+       })
 
     // counting
+    console.count('Nick')
+    console.count('Edgard')
+    console.count('Edgard')
+    console.count('Edgard')
+    console.count('Edgard')
+    console.count('Nick')
+    console.count('Nick')
+    console.count('Edgard')
+    console.count('Nick')
+    
 
     // timing
+    //console.time("fetching data")
+    //.then call console.timeEnd("fetching data")
 
   </script>
 </body>
