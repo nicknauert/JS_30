@@ -37,8 +37,22 @@
       text,
       done: false
     }
+    items.push(item);
+    populateList( items, itemsList);
     this.reset();
   }
+
+  function populateList(items = [], itemsList){
+    itemsList.innerHTML = items.map((item, ind) => {
+      return `
+        <li>
+          <input type="checkbox" data-index="${ind}" id="item${ind}" checked />
+          <label for="item${ind}">${item.text}</label>
+        </li> 
+      `;
+    }).join('');
+  }
+
   addItems.addEventListener('submit', addItem);
 
 </script>
