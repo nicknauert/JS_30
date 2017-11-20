@@ -54,12 +54,17 @@
     }).join('');
   }
 
-  function toggledOn(e){
-    
+  function toggleDone(e){
+    if(!e.target.matches('input')) return;
+    const el = e.target;
+    const ind = el.dataset.index;
+    items[ind].done = !items[ind].done;
+    localStorage.setItem('items', JSON.stringify(items));
+    populateList( items, itemsList)
   }
 
+  itemsList.addEventListener('click', toggleDone);
   addItems.addEventListener('submit', addItem);
-
   populateList( items, itemsList);
 
 </script>
